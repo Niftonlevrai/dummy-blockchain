@@ -1,0 +1,24 @@
+{
+  "name": "blockchain_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll",
+    "start": "echo start command"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariustache/blockchain_app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mariustache/blockchain_app/issues"
+  },
+  "homepage": "https://github.com/mariustache/blockchain_app#readme",
+  "devDependencies": {
+    "jest": "^26.5.3"
+  }
+}
