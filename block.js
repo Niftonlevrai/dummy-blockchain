@@ -39,12 +39,17 @@ class Block {
 
     static adjustDifficulty({ originalBlock, timestamp }) {
         const { difficulty } = originalBlock;
-        
-        if (difficulty < DIFFICULTY_SAFEGUARD) return DIFFICULTY_SAFEGUARD;
-        
-        if ((timestamp - originalBlock.timestamp) > MINE_RATE) return difficulty - 1;
+        let updatedDifficulty;
 
-        return difficulty + 1;
+        if ((timestamp - originalBlock.timestamp) > MINE_RATE) 
+            updatedDifficulty = difficulty - 1;
+        else 
+            updatedDifficulty = difficulty + 1;
+        
+        // Difficulty should not be lower than the safeguard value.
+        if (updatedDifficulty < DIFFICULTY_SAFEGUARD) return DIFFICULTY_SAFEGUARD;
+        
+        return updatedDifficulty;
     }
 }
 
