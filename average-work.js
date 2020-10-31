@@ -5,6 +5,8 @@ const blockchain = new Blockchain();
 
 blockchain.addBlock({ data: 'initial' });
 
+console.log('first block', blockchain.getLastBlock());
+
 let prevTimestamp, nextTimestamp, nextBlock, timeDiff, averageTime;
 
 const times = [];

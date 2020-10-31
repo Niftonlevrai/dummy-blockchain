@@ -23,6 +23,7 @@ class Blockchain {
         for (let blockIdx = 1; blockIdx < chain.length; blockIdx++) {
             const { timestamp, lastHash, hash, data, nonce, difficulty } = chain[blockIdx];
             const actualLastHash = chain[blockIdx - 1].hash;
+            const lastDifficulty = chain[blockIdx - 1].difficulty;
             // Check if the hash of the previous block is equal to the lastHash
             // of current block.
             if (lastHash !== actualLastHash) return false;
@@ -30,6 +31,9 @@ class Blockchain {
             // Check if block data is valid by computing the hash.
             const validatedHash = cryptoHash(timestamp, lastHash, data, nonce, difficulty);
             if (hash !== validatedHash) return false;
+
+            // Check the difficulty difference. It should not be more than 1.
+            if (Math.abs(lastDifficulty - difficulty > 1)) return false;
         }
         return true;
     }

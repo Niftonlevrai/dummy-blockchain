@@ -20,5 +20,8 @@
   "homepage": "https://github.com/mariustache/blockchain_app#readme",
   "devDependencies": {
     "jest": "^26.5.3"
+  },
+  "dependencies": {
+    "hex-to-binary": "^1.0.1"
   }
 }
