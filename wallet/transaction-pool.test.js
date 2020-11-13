@@ -66,7 +66,7 @@ describe('TransactionPool', () => {
         });
 
         it('logs erros for the invalid transactions', () => {
-            transaction.validTransactions();
+            transactionPool.validTransactions();
             expect(errorMock).toHaveBeenCalled();
         });
     });
